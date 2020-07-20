@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://server.ai-school.com" method="POST">
+        <input
+            id="user_id"
+            type="text"
+            name="userID"
+            placeholder="아이디 입력"
+        />
+        <br />
+        <input
+            id="user_pw"
+            type="text"
+            name="userPw"
+            placeholder="비밀번호 입력"
+        />
+        <br />
+        <label for="pwQ">비밀번호 질문</label>
+        <select id="pwQ" name="pwQ">
+            <option value="Q1">질문 1</option>
+            <option value="Q2">질문 1</option>
+            <option value="Q3">질문 1</option>
+        </selcet>
+        <input value="제출하기" type="button" name="pw_submit">
+        <br />
+        <textarea name="intro" cols="80" rows="10">자기소개 작성</textarea>
+        <input value="제출하기" type="button" name="submit">
+    </form>
+</body>
+</html>
