@@ -41,7 +41,7 @@ class Queue:
         if self.size() == 0:
             return -1
 
-        return self.array_list[self.f_idx+1]
+        return self.array_list[(self.f_idx+1) % self.length]
 
     def back(self):
         if self.size() == 0:
