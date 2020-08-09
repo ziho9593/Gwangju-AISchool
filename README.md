@@ -58,6 +58,21 @@
   RNN, LSTM / 로지스틱회귀-규제조절 / 덱-카드 연습 문제, 재귀
 - 07.30  
   웹 스크래핑 / 스튜던트 t, F분포 / tensorflow-boston  
-  LSTM 실습 / logi / 회전 큐 & 재귀 기본 연습문제
-- 07.31
+  LSTM 실습 / logistic 회귀 / 회전 큐 & 재귀 기본 연습문제
+- 07.31  
   머신러닝 (지도 학습) 보강 / 4주차 복습 / 엘리스-프로그래밍 수학
+### 5주차
+- 08.03  
+  뉴스 스크래핑 / 상관계수 / CNN / LSTM-spam 예제 실습  
+  Decision Tree / 진법 변환 1 예제 풀이, Greedy 알고리즘
+- 08.04  
+  영화 리뷰 스크래핑 / 확률분포 연습문제 / CNN 정규화 / spam 예제, CNN  
+  Decision Tree / 진법 변환 2 예제 풀이, 동전 예제 풀이
+- 08.05  
+  개발자 도구-Network, cURL / 통계학 기초 개념 / CNN 정규화-fashion-MNIST  
+  CNN, 뉴스 카테고리 / Decision Tree-Titanic / 수열 예제 풀이, 분할 정복법
+- 08.06
+  영화 리뷰 스크래핑 / 중심 극한 정리 / CNN 정규화-fashion-MNIST, 사전 학습  
+  뉴스 카테고리, 트윗 분류 / Decision Tree, 앙상블 / 회의실 예제 풀이, 이진 탐색
+- 08.07
+  ADsP 관련 기본 개념 및 R 기초 특강 / 5주차 복습 / 5주차 시험
