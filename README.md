@@ -71,8 +71,23 @@
 - 08.05  
   개발자 도구-Network, cURL / 통계학 기초 개념 / CNN 정규화-fashion-MNIST  
   CNN, 뉴스 카테고리 / Decision Tree-Titanic / 수열 예제 풀이, 분할 정복법
-- 08.06
+- 08.06  
   영화 리뷰 스크래핑 / 중심 극한 정리 / CNN 정규화-fashion-MNIST, 사전 학습  
   뉴스 카테고리, 트윗 분류 / Decision Tree, 앙상블 / 회의실 예제 풀이, 이진 탐색
-- 08.07
+- 08.07  
   ADsP 관련 기본 개념 및 R 기초 특강 / 5주차 복습 / 5주차 시험
+### 6주차
+- 08.10  
+  네이버 쇼핑 스크래핑 / 통계적 추정의 원리 / 사전 훈련-tensorflow hub  
+  Seq2Seq / RandomForest / 이진 탐색 예제 풀이, 병합 정렬 (Merge Sort)
+- 08.11  
+  유튜브 스크래핑 / 통계 1 연습 문제 / 사전 훈련-MobileNet / Seq2Seq  
+  Bagging, ExtraTree, GradientBoosting / 병합 정렬 예제 풀이
+- 08.12  
+  Django 기초 / 데이터 시각화-Seaborn / 전이 학습 / Seq2Seq, Chatbot  
+  AdaBoost, XGBoost, LightGBM / 퀵 정렬 (Quick Sort)
+- 08.13  
+  Django 기초 / 가설검정 기초, 평균 검정 (모집단 하나) / 신경 스타일 전이  
+  Seq2Seq, Chatbot, Attention / SVM / 퀵 정렬, 완전 탐색
+- 08.14  
+  6주차 복습 / 엘리스-문과생을 위한 머신러닝
