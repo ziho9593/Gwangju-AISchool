@@ -1,3 +1,14 @@
+# 08.31 수업 작성
+.DS_Store
+.vscode
+**/db.sqlite3
+__pycache__
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks,django,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks,django,windows
 
