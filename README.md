@@ -1,4 +1,4 @@
-<p align="left"><img src="./logo.png" width='300'> with 멋쟁이 사자처럼</p>
+<p align="left"><img src="./logo.png" width='300'> <b>with 멋쟁이 사자처럼</b></p>
 
 ---
 광주 인공지능 사관학교 중고급과정에서 배운 내용을 정리하기 위한 저장소
