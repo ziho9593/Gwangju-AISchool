@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 pipwin = "*"
 google-cloud-speech = "*"
+pyaudio = "*"
 
 [requires]
 python_version = "3.8"
