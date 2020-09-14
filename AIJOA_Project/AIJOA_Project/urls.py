@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from AIJOA_App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('menu1.html/', views.menu1, name='voice'),
+    path('menu2.html/', views.menu2, name='menu2'),
+    path('menu3.html/', views.menu3, name='menu3'),
+    path('credit.html/', views.credit, name='credit'),
 ]
