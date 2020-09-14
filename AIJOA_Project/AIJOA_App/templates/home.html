@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>burger_1</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="img"><img src="https://i.vimeocdn.com/player/435851.png?mw=100&mh=100" alt="광주인공지능사관학교"></div>
+    <div class="main">
+        <br>
+        <div class="main_1">L버거에</div>
+        <div class="main_1">오신 것을</div>
+        <div class="main_3">환영합니다</div>
+    </div>
+    <div class="sub_1">
+        <br>
+        <br>
+        주문하시려면
+    </div>
+    <div class="sub_2">
+
+<!--        <form action="{% url 'voice' %}" method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            <button type="submit">로그인하기 > </button>-->
+<!--        </form>-->
+
+        <button type="button" onclick="location.href='/menu1.html'">주문</button>
+    </div>
+</body>
+</html>
