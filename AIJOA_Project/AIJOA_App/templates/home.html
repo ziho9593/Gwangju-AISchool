@@ -32,5 +32,59 @@
 
         <button type="button" onclick="location.href='/menu1.html'">주문</button>
     </div>
+
+    <script>
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+
+        var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+        
+        var recognition = new SpeechRecognition();
+        var speechRecognitionList = new SpeechGrammarList();
+        speechRecognitionList.addFromString(grammar, 1);
+        
+        recognition.grammars = speechRecognitionList;
+        {% comment %} 인식된 문장을 하나로 합쳐 줌. True일 경우 중간에 쉬어도 인식이 끊기지 않는다. {% endcomment %}
+        recognition.continuous = false; 
+        recognition.lang = 'ko-kr';
+        {% comment %} 최종적으로 인식된 문장을 확인할지 실시간으로 인식된 문장을 확인할지 결정하는 recognition.interimResults {% endcomment %}
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        {% comment %} var diagnostic = document.querySelector('.output');
+        var bg = document.querySelector('html'); {% endcomment %}
+        
+        document.body.onload = function() {
+            recognition.start();
+            console.log('주문 받을 준비가 되었습니다.');
+        }
+
+        recognition.onend = function(event) {
+            recognition.start();
+        };
+
+        recognition.onresult = function(event) {
+            var last = event.results[0][0].transcript
+            console.log(last)
+
+            if (last.include('주문') === True) {
+                menu 페이지로 다이렉트..
+            }
+        }
+        {% comment %} recognition.onresult = function(event) {
+            console.log = event.results[0][0].transcript
+        } {% endcomment %}
+
+        {% comment %} recognition.onspeechend = function() {
+            recognition.stop();
+        }; {% endcomment %}
+
+        recognition.onerror = function(event) {
+            message.textContent = 'Error occured in recognition: ' + event.error;
+        }
+
+        
+
+    </script>
 </body>
 </html>
