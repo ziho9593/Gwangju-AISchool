@@ -6,48 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>menu1</title>
     <link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}" />
+    <script src="{% static 'script.js' %}" defer="defer" type="text/javascript"></script>
+    <script src="{% static 'jquery-1.12.3.js' %}" type="text/javascript"></script>
 </head>
 <body>
-    <div class="wrap">
-        <div class="left">                </div>
-        <div class="주문">주문하실 버거의 이름과 수량을 말씀해주세요</div>
-        <div class="right">다음 페이지 보기</div>
-    </div>
-    <br>
-    <div class="main">
-        <div class="item1">
-            <div class="i101">폴더버거 핫치킨</div>
-            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/330/DetailImage.jpg" alt="폴더버거 핫치킨"></div>
-            <div class="i103">5,700원</div>
+    <section>
+        <div id="slide">
+            <ul>
+                <li>
+                <div class="wrap">
+                    <!-- <div class="left">                </div> -->
+                    <div class="주문">주문하실 버거의 이름과 수량을 말씀해주세요</div>
+                    <!-- <div class="right">다음 페이지 보기</div> -->
+                </div>
+                <br>
+                
+                <div class="main">
+                    <div class="item1">
+                        <div class="i101">폴더버거 핫치킨</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/330/DetailImage.jpg" alt="폴더버거 핫치킨"></div>
+                        <div class="i103">5,700원</div>
+                    </div>
+                    <div class="item2">
+                        <div class="i101">폴더버거 비프</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/327/DetailImage.jpg" alt="폴더버거 비프"></div>
+                        <div class="i103">5,700원</div>
+                    </div>
+                    <div class="item3">
+                        <div class="i101">리아미라클버거</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/318/DetailImage.jpg" alt="리아미라클버거"></div>
+                        <div class="i103">5,600원</div>
+                    </div>
+                    <div class="item1">
+                        <div class="i101">원조 빅불</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/143/DetailImage.jpg" alt="원조 빅불"></div>
+                        <div class="i103">5,800원</div>
+                    </div> 
+                </div>
+                <br>
+                <div class="main">
+                    <div class="item4">
+                        <div class="i101">와규 에디션Ⅱ</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/306/DetailImage.jpg" alt="와규 에디션Ⅱ"></div>
+                        <div class="i103">5,800원</div>
+                    </div>
+                    <div class="item5">
+                        <div class="i101">더블X2</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/299/DetailImage.jpg" alt="더블X2"></div>
+                        <div class="i103">5,500원</div>
+                    </div>
+                    <div class="item6">
+                        <div class="i101">새우버거</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/296/DetailImage.jpg" alt="새우버거"></div>
+                        <div class="i103">3,900원</div>
+                    </div>
+                    <div class="item2">
+                        <div class="i101">핫크리스피버거</div>
+                        <div class="i102"><img src="http://www.lotteria.com//Data//Goods/100/DetailImage.jpg" alt="핫크리스피버거"></div>
+                        <div class="i103">4,900원</div>
+                    </div>
+                </div>
+                <br>
+                </li>
+                <li>
+                    <div class="wrap">
+                        <!-- <div class="left">이전 페이지 보기</div> -->
+                        <div class="주문">주문하실 버거의 이름과 수량을 말씀해주세요</div>
+                        <!-- <div class="right">다음 페이지 보기</div> -->
+                    </div>
+                    <br>
+                    <div class="main">
+                    <div class="item1">
+                            <div class="i101">치킨버거</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/294/DetailImage.jpg" alt="치킨버거"></div>
+                            <div class="i103">2,900원</div>
+                        </div> 
+                        <div class="item2">
+                            <div class="i101">T-Rex</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/290/DetailImage.jpg" alt="T-Rex"></div>
+                            <div class="i103">3,700원</div>
+                        </div>
+                        <div class="item3">
+                            <div class="i101">클래식 치즈버거</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/238/DetailImage.jpg" alt="클래식 치즈버거"></div>
+                            <div class="i103">4,400원</div>
+                        </div>
+                        <div class="item3">
+                            <div class="i101">불고기버거</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/68/DetailImage.jpg" alt="불고기버거"></div>
+                            <div class="i103">3,900원</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="main">
+                        <div class="item4">
+                            <div class="i101">한우불고기</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/233/DetailImage.jpg" alt="한우불고기"></div>
+                            <div class="i103">7,000원</div>
+                        </div>
+                        <div class="item4">
+                            <div class="i101">모짜렐라 인 더 버거</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/231/DetailImage.jpg" alt="모짜렐라 인 더 버거"></div>
+                            <div class="i103">6,000원</div>
+                        </div>
+                        <div class="item4">
+                            <div class="i101">AZ버거</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/219/DetailImage.jpg" alt="AZ버거"></div>
+                            <div class="i103">6,600원</div>
+                        </div>
+                        <div class="item4">
+                            <div class="i101">데리버거</div>
+                            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/26/DetailImage.jpg" alt="한우불고기"></div>
+                            <div class="i103">2,500원</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="item2">
-            <div class="i101">폴더버거 비프</div>
-            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/327/DetailImage.jpg" alt="폴더버거 비프"></div>
-            <div class="i103">5,700원</div>
-        </div>
-        <div class="item3">
-            <div class="i101">리아미라클버거</div>
-            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/318/DetailImage.jpg" alt="리아미라클버거"></div>
-            <div class="i103">5,600원</div>
-        </div>
-    </div>
-    <br>
-    <div class="main">
-        <div class="item4">
-            <div class="i101">와규 에디션Ⅱ</div>
-            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/306/DetailImage.jpg" alt="와규 에디션Ⅱ"></div>
-            <div class="i103">5,800원</div>
-        </div>
-        <div class="item5">
-            <div class="i101">더블X2</div>
-            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/299/DetailImage.jpg" alt="더블X2"></div>
-            <div class="i103">5,500원</div>
-        </div>
-        <div class="item6">
-            <div class="i101">새우버거</div>
-            <div class="i102"><img src="http://www.lotteria.com//Data//Goods/296/DetailImage.jpg" alt="새우버거"></div>
-            <div class="i103">3,900원</div>
-        </div>
-    </div>
+    </section>
 </body>
 </html>
