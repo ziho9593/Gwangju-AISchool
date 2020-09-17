@@ -23,6 +23,8 @@ def voice(request):
 def menu1(request):
     # classes = AiClass.objects.all()
     context = {
+        "select_name": '불고기버거',
+        "select_count": '1',
     }
     return render(request,'menu1.html', context)
 
