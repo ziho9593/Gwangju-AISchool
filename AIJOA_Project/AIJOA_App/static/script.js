@@ -3,7 +3,7 @@ $(document).ready(function(){
     
     setInterval(function(){
         if(num<2){
-            $("#slide ul").animate({top:"-="+400},"slow");
+            $("#slide ul").animate({top:"-="+180},"slow");
             num++;
         }else{
             $("#slide ul").animate({top:0},"slow");
