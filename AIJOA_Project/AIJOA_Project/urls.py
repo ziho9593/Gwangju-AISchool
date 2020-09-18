@@ -26,4 +26,6 @@ urlpatterns = [
     path('menu2.html/', views.menu2, name='menu2'),
     path('menu3.html/', views.menu3, name='menu3'),
     path('credit.html/', views.credit, name='credit'),
+    path('popup.html/', views.popup, name='popup'),
+    path('home.html', views.home, name='home'),
 ]

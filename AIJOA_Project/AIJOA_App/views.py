@@ -57,3 +57,9 @@ def credit(request):
     context = {
     }
     return render(request,'credit.html', context)
+
+def popup(request):
+    # classes = AiClass.objects.all()
+    context = {
+    }
+    return render(request,'popup.html', context)
