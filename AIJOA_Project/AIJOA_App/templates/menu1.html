@@ -127,11 +127,79 @@
             <div class="주문">주문하실 버거의<br>이름과 수량을<br>말씀해주세요</div>
             <div class="select"><br>선택하신 버거</div>
             <br>
-            <ul>
-                <li><div class="select_name">{{select_name}}</div><div class="blank">&nbsp;&nbsp;</div><div class="select_count">{{select_count}}개</div></li>
-                <li><div class="select_name">모짜렐라 인 더 버거</div><div class="blank">&nbsp;&nbsp;</div><div class="select_count">1개</div></li>
+            <ul id="orderlist">
             </ul>
         </div>
     </section>
+
+    <script>
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+        var speechlist = new Array();
+        {% comment %} csrf token 추가 {% endcomment %}
+        var token = '{{csrf_token}}'; 
+        {% comment %} grammarlist에 버거 이름들을 추가할 수 있을지 시도해보자 {% endcomment %}
+        var grammar = '#JSGF V1.0; grammar menus; public <menu> = 폴더버거 | 핫치킨 | 폴더버거 핫치킨 | 폴더버거핫치킨 | 비프 | 리아미라 | 클버거 | 빅불 | 치킨 | 와규 | 더블 | 새우버거 | 핫크리스피 | 티렉스 | 클래식 | 치즈버거 | 새우버거 | 불고기버거 | 한우불고기 | 모짜렐라 | 인더버거 | 모짜렐라인더버거 | AZ | 데리버거 | 버거 | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+        
+        var recognition = new SpeechRecognition();
+        var speechRecognitionList = new SpeechGrammarList();
+        speechRecognitionList.addFromString(grammar, 1.1);
+        
+        recognition.grammars = speechRecognitionList;
+        {% comment %} 인식된 문장을 하나로 합쳐 줌. True일 경우 중간에 쉬어도 인식이 끊기지 않는다. {% endcomment %}
+        recognition.continuous = false; 
+        recognition.lang = 'ko-kr';
+        {% comment %} 최종적으로 인식된 문장을 확인할지 실시간으로 인식된 문장을 확인할지 결정하는 recognition.interimResults {% endcomment %}
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        var diagnostic = document.querySelector('.output');
+        var bg = document.querySelector('html');
+        
+        document.body.onload = function() {
+            recognition.start();
+            console.log('주문할 내용을 말해주세요.');
+        }
+
+        recognition.onresult = function(event) {
+            var last = event.results[0][0].transcript;
+            speechlist.push(last);
+            console.log("인식 내용 : ", last)
+            {% comment %} console.log(speechlist) {% endcomment %}
+            console.log("서버에서 인식 중입니다...")
+
+            {% comment %} if (last.search('다음') != -1 && last.search('페이지') != -1){
+                window.location.href='/menu2.html'
+            } {% endcomment %}
+
+            $.ajax({
+                headers: { "X-CSRFToken": token },
+                url: "{% url 'getorder' %}",
+                type: "POST",
+                data: {
+                    getdata: last
+                },
+                
+                success: function(result){
+                    console.log("서버 처리 후 메뉴 : ",result.message)
+                    $('#orderlist').append('<li class="select_name">'+result.message+"&nbsp;"+'<br>'+'</li>');
+                },
+                error: function(e){
+                    console.log('error:', e.status);
+                },
+                
+            })
+
+                    
+        }
+
+        recognition.onend = function(event) {
+            recognition.start();
+        };
+        
+        recognition.onerror = function(event) {
+            message.textContent = 'Error occured in recognition: ' + event.error;
+        }
+    </script>
 </body>
 </html>
