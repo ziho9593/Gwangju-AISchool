@@ -8,7 +8,58 @@ import numpy as np
 from gensim.models.fasttext import load_facebook_vectors
 
 
-# # # 테스트로 end")
+# # # 테스트로 학습할 소량의 데이터 출력
+# # print(common_texts)
+#
+# # 데이터 불러오기
+# absolute_path = 'C:/Users/jang lee uk/PycharmProjects/ai_school_project/voice_recognition_ordering_system/jang262_branch/GJAI_WarmingUpProject/AIJOA_Project//wiki.ko'
+# file_name = 'wiki.ko.bin'
+# # file_name = 'cc.ko.300.bin' # wiki.ko.bin
+# corpus_file = datapath(absolute_path +'/'+ file_name)  # 데이터의 절대경로 상대경로는 안되나? 응 안돼
+#
+# # 다른 형식의 말뭉치가있는 경우 iterator 로 래핑하여 사용할 수 있다.
+# # 반복자는 매번 문자열 목록을 생성해야하며 각 문자열은 별도의 단어 여야함. 나머지는 Gensim이 처리함.
+# class MyIter(object):
+#     def __iter__(self):
+#         path = datapath('crime-and-punishment.txt') # 학습시킬 데이터의 절대경로
+#         with utils.open(path, 'r', encoding='utf-8') as fin:
+#             for line in fin:
+#                 yield list(tokenize(line)) # yield는 generator사용시 return대신 사용되며 호출할때마다 한번씩 yield 값을 리턴함??
+#
+# # 모델 구축
+# # vector_size (int) – 벡터의 차원 수
+# # min_n (int) – ngram의 최소 문자 수
+# # max_n (int) – ngram의 최대 문자 수
+# # bucket (int) – 버킷 수
+# # compatible_hash ( boolean ) – True 인 경우 Gensim 이전 버전과 호환되는 해시
+# #                               함수 대신 Facebook 호환 해시 함수를 사용합니다.
+#
+# # model 객체화 # 우측 링크의 매개변수 참조 : https://radimrehurek.com/gensim/models/fasttext.html
+# print("모델 객체 생성")
+# model = FastText(size=1000, window=3, min_count=1, workers=4, sg=1)
+# print("corpus_total_words 및 corpus_count 속성 설정")
+# model.build_vocab(sentences=corpus_file) # build_vocab()메소드는 corpus_total_words (및 corpus_count) 모델 속성을 설정
+#
+# # 말뭉치의 단어 수 : 모델은 학습률 (알파)을 올바르게 관리하고 정확한 진행률 추정치를 제공하기 위해 total_words 매개 변수가 필요
+# # corpus_count와 corpus_total_words의 차이는 아직 모르겠음 ****
+# total_examples = model.corpus_count
+# total_words = model.corpus_total_words
+# print(total_words)
+# print(total_examples)
+#
+# # model train
+# print("model training start")
+# model.train(corpus_file=corpus_file, total_words=total_words, epochs=500)
+# # 다른 형식의 말뭉치가있는 경우 train 방법
+# # model.train(sentences=MyIter(), total_examples=total_examples, epochs=5)
+# print("model training end")
+#
+# # 모델 저장 : 저장경로는 절대 절대 절대 경로로 설정 안그러면 어만데 저장됨.
+# save_name = "fasttext_test_model.model"
+# fname = get_tmpfile(absolute_path +'/'+ save_name)
+# print("model save start")
+# model.save(fname)
+# print("model save end")
 
 # 저장했던 모델 불러오기 : 절대 경로임.
 absolute_path = 'C:/Users/jang lee uk/PycharmProjects/ai_school_project/voice_recognition_ordering_system/jang262_branch/GJAI_WarmingUpProject/AIJOA_Project//wiki.ko'
