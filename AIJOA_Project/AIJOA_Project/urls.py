@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from AIJOA_App import views
+import re
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    re_path(r'^menu\d+[.]html/$', views.get_orderlist, name='getorder'),
     path('menu1.html/', views.menu1, name='voice'),
     path('menu2.html/', views.menu2, name='menu2'),
     path('menu3.html/', views.menu3, name='menu3'),

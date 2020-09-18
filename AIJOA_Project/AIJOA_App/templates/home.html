@@ -59,25 +59,19 @@
             console.log('주문 받을 준비가 되었습니다.');
         }
 
-        recognition.onend = function(event) {
-            recognition.start();
-        };
-
         recognition.onresult = function(event) {
-            var last = event.results[0][0].transcript
-            console.log(last)
-
-            if (last.include('주문') === True) {
-                menu 페이지로 다이렉트..
+            var last = event.results[0][0].transcript;
+            
+            var searchresult = last.search("주문");
+            console.log(last, searchresult);
+            if (searchresult != -1){
+                {% comment %} console.log(searchresult, -1);
+                console.log(typeof searchresult, typeof -1); {% endcomment %}
+                alert("주문 페이지로 이동합니다.")
+                window.location.href='/menu1.html'
             }
         }
-        {% comment %} recognition.onresult = function(event) {
-            console.log = event.results[0][0].transcript
-        } {% endcomment %}
-
-        {% comment %} recognition.onspeechend = function() {
-            recognition.stop();
-        }; {% endcomment %}
+        
 
         recognition.onerror = function(event) {
             message.textContent = 'Error occured in recognition: ' + event.error;
