@@ -109,6 +109,7 @@ img{
 .select_name{
     float: left;
     font-size: 20px;
+    width: 70%;
 }
 
 .blank{
