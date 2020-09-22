@@ -143,7 +143,7 @@
         {% comment %} csrf token 추가 {% endcomment %}
         var token = '{{csrf_token}}'; 
         {% comment %} grammarlist에 버거 이름들을 추가할 수 있을지 시도해보자 {% endcomment %}
-        var grammar = '#JSGF V1.0; grammar menus; public <menu> = 폴더버거 | 핫치킨 | 폴더버거 핫치킨 | 폴더버거핫치킨 | 비프 | 리아미라 | 클버거 | 빅불 | 치킨 | 와규 | 더블 | 새우버거 | 핫크리스피 | 티렉스 | 클래식 | 치즈버거 | 새우버거 | 불고기버거 | 한우불고기 | 모짜렐라 | 인더버거 | 모짜렐라인더버거 | AZ | 데리버거 | 버거 | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+        var grammar = '#JSGF V1.0; grammar menus; public <menu> = 폴더 | 버거 | 폴더버거 | 핫치킨 | 폴더버거 핫치킨 | 폴더버거핫치킨 | 비프 | 리아미라 | 클버거 | 빅불 | 치킨 | 와규 | 더블 | 새우버거 | 핫크리스피 | 티렉스 | 클래식 | 치즈버거 | 새우버거 | 불고기버거 | 한우불고기 | 모짜렐라 | 인더버거 | 모짜렐라인더버거 | AZ | 데리버거 | 버거 | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
         
         var recognition = new SpeechRecognition();
         var speechRecognitionList = new SpeechGrammarList();
@@ -175,6 +175,10 @@
             {% comment %} if (last.search('다음') != -1 && last.search('페이지') != -1){
                 window.location.href='/menu2.html'
             } {% endcomment %}
+
+            if (last.search('결제') != -1){
+                window.location.href='/popup.html'
+            }
 
             $.ajax({
                 headers: { "X-CSRFToken": token },
