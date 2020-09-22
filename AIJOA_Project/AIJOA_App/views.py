@@ -1,10 +1,16 @@
+import sys
+sys.path.append(r'C:\Users\NA\Desktop\Workspace\AI_Warmup_Project_0921\GJAI_WarmingUpProject\AIJOA_Project\AIJOA_App')
+
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.http import JsonResponse
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from .modules import example
 import json
+import ft_gensim_v3 as gs
+from django.conf import settings
 
 # Create your views here.
 
@@ -21,14 +27,22 @@ def voice(request):
 
     context = {
     }
-    return render(request,'menu1.html', context)
+    return redirect('credit')
 
 def get_orderlist(request): # https://weejw.tistory.com/160 참고
     context = {}
     request_getdata = request.POST
     if request.is_ajax():
         data = request_getdata['getdata']
-        return HttpResponse(json.dumps({'message':data}), 'application/json')
+        if data == '결제':
+            return render(request,'menu2.html', context)
+        # print(getattr(settings, 'DATABASES'))
+        print(getattr(settings, 'MODEL'))
+        resultword = gs.getwordsim(data,getattr(settings, 'MODEL'))
+        if resultword == -1:
+            return None
+        else:
+            return HttpResponse(json.dumps({'message':resultword}), 'application/json')
     
     return render(request, 'menu1.html', context)
 
