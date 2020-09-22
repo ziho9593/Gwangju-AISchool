@@ -177,11 +177,15 @@ def getwordsim(target, menulist):
     mostsimword = max(simlist, key=simlist.get)
     print(f"유사도 측정 결과 '{mostsimword}'선정")
     
-    if max(simlist.values()) < 0.7:
+    if max(simlist.values()) < 0.7: # 0.8로 올려도 될 듯?
         return -1
     else:
         return mostsimword
         
+def order_dict_init():
+    menulist = getattr(settings, 'MENULIST')
+    return {key : 0 for key in menulist.keys()}
+
 if __name__ == "__main__":
     main()
 

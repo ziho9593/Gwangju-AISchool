@@ -156,9 +156,24 @@
         recognition.interimResults = false;
         recognition.maxAlternatives = 1;
 
+        var od = {};
+
+        {% for key in orderdict.keys %}
+            {% comment %} {{ key }} {% endcomment %}
+            od['{{ key }}'] = 0
+        {% endfor %}
+
+
+        console.log("가져온 딕셔너리: ", od);
+        console.log('새우버거 수량:', od['새우버거']);
+        console.log('폴더버거 비프 수량:', od['폴더버거 비프']);
+        console.log('원조 빅불 수량:', od['원조 빅불']);
+
         var diagnostic = document.querySelector('.output');
         var bg = document.querySelector('html');
         
+        {% comment %} var orderlist = {{폴더버거 핫치킨}} {% endcomment %}
+
         document.body.onload = function() {
             recognition.start();
             console.log('주문할 내용을 말해주세요.');
@@ -196,8 +211,6 @@
                 },
                 
             })
-
-                    
         }
 
         recognition.onend = function(event) {

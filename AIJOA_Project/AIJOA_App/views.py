@@ -11,6 +11,7 @@ from .modules import example
 import json
 import ft_gensim_v3 as gs
 from django.conf import settings
+from .models import *
 
 # Create your views here.
 
@@ -22,14 +23,16 @@ def home(request):
 
 def voice(request):
     # classes = AiClass.objects.all()
-
-    example.main()#
-
-    context = {
-    }
-    return redirect('credit')
+    
+    print("voice 함수 실행")
+    context = {}
+    order_dict = gs.order_dict_init()
+    print(order_dict)
+    
+    return render(request, 'menu1.html', {'orderdict': order_dict})
 
 def get_orderlist(request): # https://weejw.tistory.com/160 참고
+    print("get orderlist 함수 실행")
     context = {}
     request_getdata = request.POST
     if request.is_ajax():

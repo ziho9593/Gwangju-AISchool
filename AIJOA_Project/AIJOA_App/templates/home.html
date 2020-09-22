@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>burger_1</title>
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+
+    
+
 </head>
 <body>
     <br>
@@ -25,12 +28,12 @@
     </div>
     <div class="sub_2">
 
-<!--        <form action="{% url 'voice' %}" method="POST">-->
-<!--            {% csrf_token %}-->
-<!--            <button type="submit">로그인하기 > </button>-->
-<!--        </form>-->
+       {% comment %} <form action="{% url 'voice' %}" method="POST">
+           {% csrf_token %}
+           <button type="submit">로그인하기 > </button>
+       </form> {% endcomment %}
 
-        <button type="button" onclick="location.href='/menu1.html'">주문</button>
+        <button type="button" onclick=" location.href='{% url 'voice' %}' ">주문</button>
     </div>
 
     <script>
@@ -53,7 +56,7 @@
 
         {% comment %} var diagnostic = document.querySelector('.output');
         var bg = document.querySelector('html'); {% endcomment %}
-        
+
         document.body.onload = function() {
             recognition.start();
             console.log('주문 받을 준비가 되었습니다.');
@@ -67,11 +70,16 @@
             if (searchresult != -1){
                 {% comment %} console.log(searchresult, -1);
                 console.log(typeof searchresult, typeof -1); {% endcomment %}
-                alert("주문 페이지로 이동합니다.")
-                window.location.href='/menu1.html'
+                {% comment %} alert("주문 페이지로 이동합니다.") {% endcomment %}
+                {% comment %} window.location.href='/menu1.html' {% endcomment %}
+                {% comment %} <form action="{% url 'voice' %}" method="POST"></form> {% endcomment %}
+                window.location.href="{% url 'voice' %}"
             }
         }
         
+        recognition.onend = function(event) {
+            recognition.start();
+        };
 
         recognition.onerror = function(event) {
             message.textContent = 'Error occured in recognition: ' + event.error;
