@@ -203,10 +203,8 @@
                 },
                 
                 success: function(result){
-                    console.log("서버 처리 후 메뉴 : ", result.message)
-                    od[result.message] = od[result.message] + 1
-                    
-                    $('#orderlist').append('<tr><td class="select_name">'+result.message+"&nbsp;"+'<br>'+'</td><td class="ea">1개</td><tr>');
+                    console.log("서버 처리 후 메뉴 : ",result.message)
+                    $('#orderlist').append('<tr><td class="select_name">'+result.message+"&nbsp;"+'<br>'+'</td><td>1개</td><tr>');
                 },
                 error: function(e){
                     console.log('error:', e.status);
