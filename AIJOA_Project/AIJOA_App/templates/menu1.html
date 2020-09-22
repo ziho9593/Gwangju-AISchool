@@ -127,11 +127,10 @@
             <div class="주문">주문하실 버거의<br>이름과 수량을<br>말씀해주세요</div>
             <div class="select"><br>선택하신 버거</div>
             <br>
-            <ul>
-            <li><div id="orderlist"></div></li>
+            <table id="orderlist" width="300px">
             <br>
-            <li><div class="button"><button type="button" onclick="location.href='/popup.html'">결제</button></div></li>
-            </ul>
+            <tr><div class="button"><button type="button" onclick="location.href='/popup.html'">결제</button></div></tr>
+            </table>
         </div>
        
     </section>
@@ -190,7 +189,7 @@
                 
                 success: function(result){
                     console.log("서버 처리 후 메뉴 : ",result.message)
-                    $('#orderlist').append('<li class="select_name">'+result.message+"&nbsp;"+'<br>'+'</li>');
+                    $('#orderlist').append('<tr><td class="select_name">'+result.message+"&nbsp;"+'<br>'+'</td><td>1개</td><tr>');
                 },
                 error: function(e){
                     console.log('error:', e.status);
