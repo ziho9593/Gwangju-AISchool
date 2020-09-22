@@ -21,10 +21,10 @@ import re
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    re_path(r'^menu\d+[.]html/$', views.get_orderlist, name='getorder'),
-    path('menu1.html/', views.menu1, name='voice'),
+    path('menu1.html/', views.voice, name='voice'),
     path('menu2.html/', views.menu2, name='menu2'),
     path('menu3.html/', views.menu3, name='menu3'),
+    re_path(r'^menu\d+[.]html/$', views.get_orderlist, name='getorder'),
     path('credit.html/', views.credit, name='credit'),
     path('popup.html/', views.popup, name='popup'),
     path('home.html', views.home, name='home'),
