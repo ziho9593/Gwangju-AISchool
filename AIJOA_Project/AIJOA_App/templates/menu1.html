@@ -191,7 +191,6 @@
                 },
                 
                 success: function(result){
-<<<<<<< HEAD
                     console.log("서버 처리 후 메뉴 : ", result.message)
                     od[result.message] = od[result.message] + 1
                     console.log("메뉴", result.message, "의 수량이", od[result.message]-1, "에서", od[result.message], "로 증가")
@@ -208,10 +207,6 @@
                     else{
                         $('#orderlist').append('<tr><td class="select_name">'+result.message+"&nbsp;"+'<br>'+'</td> <td class="ea">1</td> <tr>');
                     }
-=======
-                    console.log("서버 처리 후 메뉴 : ",result.message)
-                    $('#orderlist').append('<tr><td class="select_name">'+result.message+"&nbsp;"+'<br>'+'</td><td>1개</td><tr>');
->>>>>>> c5ed35418506e6159d1eec44769bad7bd271a8ef
                 },
                 error: function(e){
                     console.log('error:', e.status);
