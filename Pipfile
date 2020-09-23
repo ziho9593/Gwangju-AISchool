@@ -9,7 +9,6 @@ verify_ssl = true
 django = "*"
 pipwin = "*"
 google-cloud-speech = "*"
-pyaudio = "*"
 tensorflow = "*"
 gensim = "*"
 numpy = "*"
