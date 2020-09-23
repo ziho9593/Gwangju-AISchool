@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 django = "*"
 pipwin = "*"
-google-cloud-speech = "*"
 tensorflow = "*"
 gensim = "*"
 numpy = "*"
