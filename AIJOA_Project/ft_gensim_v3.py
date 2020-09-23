@@ -9,10 +9,12 @@ import os
 import numpy as np
 from django.conf import settings
 
+absolute_path = 'C:/Users/HAN/Desktop/WarmingUpProject/AIJOA_Project/wiki.ko'
+
 def main():
     class MyIter(object):
         def __iter__(self):
-            absolute_path = r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko'
+            # absolute_path = r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko'
             file_name = 'voice.txt'
             path = datapath(absolute_path +'/'+ file_name) # 학습시킬 데이터의 절대경로
             with utils.open(path, 'r', encoding='UTF-8') as fin:
@@ -21,7 +23,7 @@ def main():
 
 
     # 데이터 불러오기
-    absolute_path = r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko'
+    # absolute_path = r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko'
     file_name = 'wiki.ko.bin'
     # file_name = 'cc.ko.300.bin' # wiki.ko.bin
     corpus_file = datapath(absolute_path +'/'+ file_name)  # 데이터의 절대경로 상대경로는 안되나? 응 안돼
@@ -32,17 +34,6 @@ def main():
     print("모델 객체 생성")
     # model = FastText(size=1000, window=3, min_count=3, workers=4, sg=1)
     model = models.fasttext.load_facebook_model(corpus_file)
-
-
-    print("폴더버거핫치킨 유사도 확인")
-    for w, sim in model.wv.similar_by_word('폴더버거핫치킨', 10):
-        print(f'{w}: {sim}')
-
-    print(f"'콜 더 버거'과 '폴더버거'의 유사도: {model.wv.similarity('콜 더 버거', '폴더버거')}")
-    print(f"'골드버그'과 '폴더버거'의 유사도: {model.wv.similarity('골드버그', '폴더버거')}")
-    print(f"'폴더버거핫치킨'과 '폴더버그핫치킨'의 유사도: {model.wv.similarity('폴더버거핫치킨', '폴더버그핫치킨')}")
-    print(f"'아이언맨'과 '헐크'의 유사도: {model.wv.similarity('아이언맨', '헐크')}")
-    print(f"'아이언맨'과 '스파이더맨'의 유사도: {model.wv.similarity('아이언맨', '스파이더맨')}")
 
 
     # 불러온 모델에 이어서 학습하기
@@ -77,27 +68,15 @@ def main():
 
 
     # 저장했던 모델 불러오기 : 절대 경로임.
-    absolute_path = r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko'
+    # absolute_path = r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko'
     file_name = "wiki_ko_v3.model"
     fname = get_tmpfile(absolute_path +'/'+ file_name)
     print("model load start")
     model = FastText.load(fname)
     print("model load end")
 
-
-    # print("폴더버거핫치킨 유사도 확인")
-    # for w, sim in model.wv.similar_by_word('폴더버거핫치킨', 10):
-    #     print(f'{w}: {sim}')
-    #
-    # print(f"'콜 더 버거'과 '폴더버거'의 유사도: {model.wv.similarity('콜 더 버거', '폴더버거')}")
-    # print(f"'폴더버거'과 '콜 더 버거'의 유사도: {model.wv.similarity('폴더버거', '콜 더 버거')}")
-    # print(f"'골드버그'과 '폴더버거'의 유사도: {model.wv.similarity('골드버그', '폴더버거')}")
-    # print(f"'폴더버거핫치킨'과 '폴더버그핫치킨'의 유사도: {model.wv.similarity('폴더버거핫치킨', '폴더버그핫치킨')}")
-    # print(f"'아이언맨'과 '헐크'의 유사도: {model.wv.similarity('아이언맨', '헐크')}")
-    # print(f"'아이언맨'과 '스파이더맨'의 유사도: {model.wv.similarity('아이언맨', '스파이더맨')}")
-
     menu_list = {
-        '폴더버거 핫키친':['골드버거 치킨','오늘도 봐봐 치킨','오늘도 보고 와 치킨','불도 먹었어 치킨',
+        '폴더버거 핫치킨':['골드버거 치킨','오늘도 봐봐 치킨','오늘도 보고 와 치킨','불도 먹었어 치킨',
                     '골드버거 핫치킨', '골드버거 치킨', '월드 보고 아침에', '오늘도 보고 와 치킨',
                     '폴더 버거 킹', '홀더 버거 치킨', '뭘 더 먹어 치킨', '너 먹어 치킨', '뭐 먹어 치킨'],
         '폴더버거 비프':['골드버그 비프', '올더 버거 비프', '폴더 버거 비프', '골드버그 비프 세트',
@@ -142,11 +121,6 @@ def main():
         '새우버거':['새우버거', '재봉 설탕', '새우버거 세트', '일본어 태어나', '여보 가서 켜',
                 '새우버거 속']
     }
-
-    # # 메뉴이름과 메뉴오탈과의 유사도
-    # for key in menu_list.keys():
-    #     for value in menu_list[key]:
-    #         print(f"'{key}'과 '{value}'의 유사도: {model.wv.similarity(key, value)}")
 
 
     # 메뉴오탈과 메들 사이의 유사도

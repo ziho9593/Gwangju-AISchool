@@ -121,10 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MODEL = FastText.load(r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko\wiki_ko_v3.model')
+# MODEL = FastText.load(r'C:\Users\NA\Desktop\Workspace\GJAI_WarmingUpProject\AIJOA_Project\wiki.ko\wiki_ko_v3.model')
+MODEL = FastText.load(r'C:\Users\HAN\Desktop\WarmingUpProject\AIJOA_Project\wiki.ko\wiki_ko_v3.model')
 
 MENULIST = {
-        '폴더버거 핫키친':['골드버거 치킨','오늘도 봐봐 치킨','오늘도 보고 와 치킨','불도 먹었어 치킨',
+        '폴더버거 핫치킨':['골드버거 치킨','오늘도 봐봐 치킨','오늘도 보고 와 치킨','불도 먹었어 치킨',
                     '골드버거 핫치킨', '골드버거 치킨', '월드 보고 아침에', '오늘도 보고 와 치킨',
                     '폴더 버거 킹', '홀더 버거 치킨', '뭘 더 먹어 치킨', '너 먹어 치킨', '뭐 먹어 치킨'],
         '폴더버거 비프':['골드버그 비프', '올더 버거 비프', '폴더 버거 비프', '골드버그 비프 세트',

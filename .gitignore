@@ -278,3 +278,13 @@ $RECYCLE.BIN/
 
 # GoogleCloudApiKey
 GoogleCloudApiKey.json
+
+# wiki.ko.bin
+wiki.ko.bin
+
+# FastText 모델 생성 파일
+*.model
+*.npy
+
+# 유사도 측정 파일
+*유사도.txt
