@@ -20,4 +20,6 @@ from HackathonApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('recipe', views.recipe, name='recipe'),
+    path('recipe1.html/', views.recipe1, name='recipe1'),
 ]
