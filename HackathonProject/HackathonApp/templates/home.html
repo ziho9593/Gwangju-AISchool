@@ -16,16 +16,17 @@
     <div class="main2">당신이 가지고 있는</div>
     <div class="main2">재료를 입력해주세요</div><br>
     <div class="input">
-    <form>
-        <input id='food1' type='text'/><br>
-        <input id='food2' type='text'/><br>
-        <input id='food3' type='text'/><br>
-        <input id='food4' type='text'/><br>
-        <input id='food5' type='text'/><br>
-        <input id='food6' type='text'/><br>
-        <input id='food7' type='text'/><br>
-        <input id='food8' type='text'/><br>
-        <input id='food9' type='text'/><br>
+    <form action="{% url 'recipe' %}" method="POST">
+        {% csrf_token %}
+        <input id='food1' type='text' name="food1"/><br>
+        <input id='food2' type='text' name="food2"/><br>
+        <input id='food3' type='text' name="food3"/><br>
+        <input id='food4' type='text' name="food4"/><br>
+        <input id='food5' type='text' name="food5"/><br>
+        <input id='food6' type='text' name="food6"/><br>
+        <input id='food7' type='text' name="food7"/><br>
+        <input id='food8' type='text' name="food8"/><br>
+        <input id='food9' type='text' name="food9"/><br>
         <input id='submit' type='submit'>
     </form>
     </div>
