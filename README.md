@@ -28,7 +28,7 @@
 
 
 ### HACKATHON Timetable
-<p aling='left'><img src='./img/timetable.PNG' width='550'></p>
+<p aling='left'><img src='./img/timetable.PNG' width='650'></p>
 
 
 ### 주제 
