@@ -20,6 +20,8 @@ from HackathonApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('recipe', views.recipe, name='recipe'),
-    path('recipe1.html/', views.recipe1, name='recipe1'),
+    path('recipe/', views.recipe, name='recipe'),
+    path('recipe1/', views.recipe1, name='recipe1'),
+    path('recipe2/', views.recipe2, name='recipe2'),    
+    path('recipe3/', views.recipe3, name='recipe3'),
 ]

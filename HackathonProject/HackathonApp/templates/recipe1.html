@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김치전</title>
+    <title>{{ recipe1 }}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'recipe1.css' %}">
 </head>
 <body>
 
-
-    <div class="main">김치전</div><br>
+{% comment %} 김치전 {% endcomment %}
+    <div class="main">{{ recipe1 }}</div><br>
         <div class="wrap">
         <div class="youtube"><iframe width="400" height="320" src="https://www.youtube.com/embed/47OIcvpqxlo?list=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>   
         <div class="재료">
@@ -42,8 +42,8 @@
         </pre>
     </div>
     <div class="wrap">
-        <div class="홈화면으로"><a href="food.html">홈화면으로</a></div>&emsp;
-        <div class="이전으로"><a href="recipe.html">이전으로</a></div>
+        <div class="홈화면으로"><a href="{% url 'home' %}">홈화면으로</a></div>&emsp;
+        {% comment %} <div class="이전으로"><a href="{% url 'recipe' %}">이전으로</a></div> {% endcomment %}
     </div>
 </body>
 </html>

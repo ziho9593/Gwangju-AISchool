@@ -15,12 +15,6 @@ a:hover { color:darkblue; text-decoration: none;}
 
 
 
-
-.이전으로{
-    display: flex;
-    justify-content : center;
-}
-
 .wrap{
     display: flex;
     justify-content : center;
