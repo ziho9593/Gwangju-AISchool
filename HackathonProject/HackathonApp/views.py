@@ -8,6 +8,7 @@ def home(request):
 
     return render(request, 'home.html')
 
+
 def recipe(request):
     file_path = './HackathonApp/data/material_list.json'
     with open(file_path, "r") as json_file:
@@ -40,11 +41,8 @@ def recipe(request):
 
 
 def recipe1(request):
-    context = {
-        "recipe1": "김치전",
-    }
     
-    return render(request, 'recipe1.html', context)
+    return render(request, 'recipe1.html')
 
 
 def recipe2(request):

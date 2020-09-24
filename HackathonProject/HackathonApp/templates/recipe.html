@@ -7,13 +7,16 @@
     <title>요리 추천</title>
     <link rel="stylesheet" type="text/css" href="{% static 'recipe.css' %}"/>
 </head>
-<body><br>
-    <div class="main0">{{ food1 }}&emsp;{{ food2 }}&emsp;{{ food3 }}&emsp;{{ food4 }}<br>{{ food5 }}&emsp;{{ food6 }}&emsp;{{ food7 }}</div>{{ food8 }}</div>{{ food9 }}</div><br>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="main">당신의 재료를 바탕으로</div>
     <div class="main">요리를 추천합니다</div><br><br>
     <div class="main"><img src="/static/images/restaurant.png" alt="포크"></div><br>
-    <div class="recipe1"><a href="{% url 'recipe1' %}">{{ recipe1 }}</a></div>
-    <div class="recipe2"><a href="{% url 'recipe2' %}">김치찌개</div>
-    <div class="recipe3"><a href="{% url 'recipe3' %}">김치볶음밥</div>
+    <div class="recipe1"><a href="{% url 'recipe1' %}">{{ result1 }}</a></div>
+    <div class="recipe2"><a href="{% url 'recipe2' %}">{{ result2 }}</a></div>
+    <div class="recipe3"><a href="{% url 'recipe3' %}">{{ result3 }}</a></div>
 </body>
 </html>
