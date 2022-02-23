@@ -1,0 +1,32 @@
+* { font-family: 'S-CoreDream-7ExtraBold';
+}
+
+@font-face {
+    font-family: 'S-CoreDream-7ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main1{
+    display: flex;
+    font-size: 40px;
+    justify-content : center;
+}
+
+.main2{
+    display: flex;
+    font-size: 40px;
+    justify-content : center;
+}
+
+
+.input{
+    display: flex;
+    justify-content : center;
+}
+
+#submit{
+    display: flex;
+    justify-content : center;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김치찌개</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe1.css' %}">
+</head>
+<body>
+
+
+    <div class="main">김치찌개</div><br>
+        <div class="wrap">
+        <div class="youtube"><iframe width="400" height="320" src="https://www.youtube.com/embed/qWbHSOplcvY?list=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>   
+        <div class="재료">
+            <pre>
+            돼지고기(목살) 1컵(130g)
+            신김치 3컵(390g)
+            물 3컵(540ml)
+            청양고추 2개(20g)
+            대파 약 2/3대(70g)
+            간 마늘 1큰술(20g)
+            굵은 고춧가루 1큰술(8g)
+            고운 고춧가루 ½큰술(3g)
+            국간장 1큰술(10g)
+            새우젓 1큰술(20g)
+            </pre>
+        </div>
+    </div>
+    <div class="요리법">
+        <pre>
+        1. 돼지고기는 1.5cm 정도 두께로 먹기 좋게 자른다. 
+        2. 냄비에 돼지고기, 정수물, 새우젓을 넣고 강 불로 끓인다. 
+        3. 찌개가 끓어오르면 중 약불로 줄인 후 고기가 무를 때 까지 최소 10분 정도 끓인다.
+        4. 대파는 두께 0.5cm로 송송썬다.
+        5. 청양고추는 두께 0.5cm로 어슷썬다.
+        6. 10분 후 물이 졸아들면 졸아든 만큼의 물을 보충한 후 신김치, 국간장, 굵은 고춧가루, 고운 고춧가루, 간 마늘을 넣는다. 
+        7. 찌개가 팔팔 끓으면 대파, 청양고추를 넣는다.  
+        8. 완성 직전에 고춧가루를 뿌려 완성한다.
+        </pre>
+    </div>
+    <div class="wrap">
+        <div class="홈화면으로"><a href="{% url 'home' %}">홈화면으로</a></div>&emsp;
+        <div class="이전으로"><a href="{% url 'recipe' %}">이전으로</a></div>
+    </div>
+</body>
+</html>
