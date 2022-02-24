@@ -1,0 +1,32 @@
+{
+    "students": [
+        {
+            "id": "kang",
+            "password": 1111,
+            "name": "강동현",
+            "promise": "다짐",
+            "interest": "관심"
+        },
+        {
+            "id": "han",
+            "password": 2222,
+            "name": "한지호",
+            "promise": "다짐",
+            "interest": "관심"
+        },
+        {
+            "id": "lee",
+            "password": 3333,
+            "name": "이덕혜",
+            "promise": "다짐",
+            "interest": "관심"
+        },
+        {
+            "id": "kim",
+            "password": 4444,
+            "name": "김철수",
+            "promise": "다짐",
+            "interest": "관심"
+        }
+    ]
+}

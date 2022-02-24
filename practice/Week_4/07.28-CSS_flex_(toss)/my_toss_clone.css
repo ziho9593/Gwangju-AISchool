@@ -1,0 +1,41 @@
+* { 
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; 
+    font-size: 17px;
+}
+
+.box {
+    width: 400px;
+    height: 80px;
+    margin: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 0 30px 60px 12px rgba(0, 0, 33, 0.05),
+                0 4px 24px 0 rgba(0, 0, 33, 0.05),
+                0 0 1px 0 rgba(0, 0, 33, 0.09) ;
+}
+
+img {
+    margin-left: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.bank {
+    width: 100px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.balance {
+    width: 200px;
+    margin-right: 20px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: flex-end;
+}

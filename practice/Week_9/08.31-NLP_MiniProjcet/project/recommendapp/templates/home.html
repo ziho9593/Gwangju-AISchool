@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>좋아하는 영화 이름을 입력하세요.</h1>
+    <form action="{%url 'result' %}" method="POST">
+        {% csrf_token %}
+        <input name="mv_name" placeholder="영화명" />
+        <br />
+        <br />
+        <button type="submit">체크하기</button>
+    </form>
+    
+</body>
+</html>
